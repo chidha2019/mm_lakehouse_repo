@@ -1,0 +1,5 @@
+product_id,product_name,line_of_business
+P001,Whole Life,LIFE
+P002,Term Life,LIFE
+P003,Disability Income,DI
+P004,Fixed Annuity,ANNUITY

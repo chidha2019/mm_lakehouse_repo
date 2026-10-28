@@ -1,0 +1,16 @@
+flowchart LR
+  subgraph OP[On-premises simulated]
+    PAS[Insurance CSVs] --> SYNC[Python Transfer]
+    WEALTH[Wealth CSVs] --> SYNC
+  end
+  SYNC --> BLOB[Azure Blob CSV Landing]
+  BLOB --> STAGE[Snowflake Azure External Stage]
+  STAGE --> BR[Bronze Iceberg]
+  BR --> SL[Silver Iceberg]
+  SL --> CU[Curated Iceberg]
+  V[Azure External Volume] -. owns Parquet and metadata .-> BR
+  V -.-> SL
+  V -.-> CU
+  KH[ContextHub crawler] --> REPO[GitHub SQL Python YAML]
+  REPO --> KG[Neo4j Knowledge Graph]
+  CU --> BI[GenBI and APIs]

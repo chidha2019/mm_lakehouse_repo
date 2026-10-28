@@ -1,0 +1,782 @@
+{
+  "schema_version": "1.0",
+  "nodes": [
+    {
+      "id": "csv:customer",
+      "kind": "SourceFile",
+      "path": "landing/customer/"
+    },
+    {
+      "id": "table:BRONZE.CUSTOMER",
+      "kind": "IcebergTable",
+      "layer": "bronze"
+    },
+    {
+      "id": "table:SILVER.CUSTOMER",
+      "kind": "IcebergTable",
+      "layer": "silver"
+    },
+    {
+      "id": "column:SILVER.CUSTOMER.CUSTOMER_ID",
+      "kind": "Column",
+      "name": "customer_id"
+    },
+    {
+      "id": "column:SILVER.CUSTOMER.FIRST_NAME",
+      "kind": "Column",
+      "name": "first_name"
+    },
+    {
+      "id": "column:SILVER.CUSTOMER.LAST_NAME",
+      "kind": "Column",
+      "name": "last_name"
+    },
+    {
+      "id": "column:SILVER.CUSTOMER.STATE",
+      "kind": "Column",
+      "name": "state"
+    },
+    {
+      "id": "column:SILVER.CUSTOMER.BIRTH_DATE",
+      "kind": "Column",
+      "name": "birth_date"
+    },
+    {
+      "id": "csv:insurance_product",
+      "kind": "SourceFile",
+      "path": "landing/insurance_product/"
+    },
+    {
+      "id": "table:BRONZE.INSURANCE_PRODUCT",
+      "kind": "IcebergTable",
+      "layer": "bronze"
+    },
+    {
+      "id": "table:SILVER.INSURANCE_PRODUCT",
+      "kind": "IcebergTable",
+      "layer": "silver"
+    },
+    {
+      "id": "column:SILVER.INSURANCE_PRODUCT.PRODUCT_ID",
+      "kind": "Column",
+      "name": "product_id"
+    },
+    {
+      "id": "column:SILVER.INSURANCE_PRODUCT.PRODUCT_NAME",
+      "kind": "Column",
+      "name": "product_name"
+    },
+    {
+      "id": "column:SILVER.INSURANCE_PRODUCT.LINE_OF_BUSINESS",
+      "kind": "Column",
+      "name": "line_of_business"
+    },
+    {
+      "id": "csv:policy",
+      "kind": "SourceFile",
+      "path": "landing/policy/"
+    },
+    {
+      "id": "table:BRONZE.POLICY",
+      "kind": "IcebergTable",
+      "layer": "bronze"
+    },
+    {
+      "id": "table:SILVER.POLICY",
+      "kind": "IcebergTable",
+      "layer": "silver"
+    },
+    {
+      "id": "column:SILVER.POLICY.POLICY_ID",
+      "kind": "Column",
+      "name": "policy_id"
+    },
+    {
+      "id": "column:SILVER.POLICY.CUSTOMER_ID",
+      "kind": "Column",
+      "name": "customer_id"
+    },
+    {
+      "id": "column:SILVER.POLICY.PRODUCT_ID",
+      "kind": "Column",
+      "name": "product_id"
+    },
+    {
+      "id": "column:SILVER.POLICY.POLICY_STATUS",
+      "kind": "Column",
+      "name": "policy_status"
+    },
+    {
+      "id": "column:SILVER.POLICY.EFFECTIVE_DATE",
+      "kind": "Column",
+      "name": "effective_date"
+    },
+    {
+      "id": "column:SILVER.POLICY.ANNUAL_PREMIUM",
+      "kind": "Column",
+      "name": "annual_premium"
+    },
+    {
+      "id": "column:SILVER.POLICY.UPDATED_AT",
+      "kind": "Column",
+      "name": "updated_at"
+    },
+    {
+      "id": "csv:coverage",
+      "kind": "SourceFile",
+      "path": "landing/coverage/"
+    },
+    {
+      "id": "table:BRONZE.COVERAGE",
+      "kind": "IcebergTable",
+      "layer": "bronze"
+    },
+    {
+      "id": "table:SILVER.COVERAGE",
+      "kind": "IcebergTable",
+      "layer": "silver"
+    },
+    {
+      "id": "column:SILVER.COVERAGE.COVERAGE_ID",
+      "kind": "Column",
+      "name": "coverage_id"
+    },
+    {
+      "id": "column:SILVER.COVERAGE.POLICY_ID",
+      "kind": "Column",
+      "name": "policy_id"
+    },
+    {
+      "id": "column:SILVER.COVERAGE.COVERAGE_TYPE",
+      "kind": "Column",
+      "name": "coverage_type"
+    },
+    {
+      "id": "column:SILVER.COVERAGE.FACE_AMOUNT",
+      "kind": "Column",
+      "name": "face_amount"
+    },
+    {
+      "id": "csv:advisor",
+      "kind": "SourceFile",
+      "path": "landing/advisor/"
+    },
+    {
+      "id": "table:BRONZE.ADVISOR",
+      "kind": "IcebergTable",
+      "layer": "bronze"
+    },
+    {
+      "id": "table:SILVER.ADVISOR",
+      "kind": "IcebergTable",
+      "layer": "silver"
+    },
+    {
+      "id": "column:SILVER.ADVISOR.ADVISOR_ID",
+      "kind": "Column",
+      "name": "advisor_id"
+    },
+    {
+      "id": "column:SILVER.ADVISOR.ADVISOR_NAME",
+      "kind": "Column",
+      "name": "advisor_name"
+    },
+    {
+      "id": "column:SILVER.ADVISOR.REGION",
+      "kind": "Column",
+      "name": "region"
+    },
+    {
+      "id": "csv:wealth_account",
+      "kind": "SourceFile",
+      "path": "landing/wealth_account/"
+    },
+    {
+      "id": "table:BRONZE.WEALTH_ACCOUNT",
+      "kind": "IcebergTable",
+      "layer": "bronze"
+    },
+    {
+      "id": "table:SILVER.WEALTH_ACCOUNT",
+      "kind": "IcebergTable",
+      "layer": "silver"
+    },
+    {
+      "id": "column:SILVER.WEALTH_ACCOUNT.ACCOUNT_ID",
+      "kind": "Column",
+      "name": "account_id"
+    },
+    {
+      "id": "column:SILVER.WEALTH_ACCOUNT.CUSTOMER_ID",
+      "kind": "Column",
+      "name": "customer_id"
+    },
+    {
+      "id": "column:SILVER.WEALTH_ACCOUNT.ADVISOR_ID",
+      "kind": "Column",
+      "name": "advisor_id"
+    },
+    {
+      "id": "column:SILVER.WEALTH_ACCOUNT.ACCOUNT_TYPE",
+      "kind": "Column",
+      "name": "account_type"
+    },
+    {
+      "id": "column:SILVER.WEALTH_ACCOUNT.OPENED_DATE",
+      "kind": "Column",
+      "name": "opened_date"
+    },
+    {
+      "id": "column:SILVER.WEALTH_ACCOUNT.ACCOUNT_STATUS",
+      "kind": "Column",
+      "name": "account_status"
+    },
+    {
+      "id": "csv:holding",
+      "kind": "SourceFile",
+      "path": "landing/holding/"
+    },
+    {
+      "id": "table:BRONZE.HOLDING",
+      "kind": "IcebergTable",
+      "layer": "bronze"
+    },
+    {
+      "id": "table:SILVER.HOLDING",
+      "kind": "IcebergTable",
+      "layer": "silver"
+    },
+    {
+      "id": "column:SILVER.HOLDING.HOLDING_ID",
+      "kind": "Column",
+      "name": "holding_id"
+    },
+    {
+      "id": "column:SILVER.HOLDING.ACCOUNT_ID",
+      "kind": "Column",
+      "name": "account_id"
+    },
+    {
+      "id": "column:SILVER.HOLDING.SECURITY_SYMBOL",
+      "kind": "Column",
+      "name": "security_symbol"
+    },
+    {
+      "id": "column:SILVER.HOLDING.QUANTITY",
+      "kind": "Column",
+      "name": "quantity"
+    },
+    {
+      "id": "column:SILVER.HOLDING.MARKET_PRICE",
+      "kind": "Column",
+      "name": "market_price"
+    },
+    {
+      "id": "column:SILVER.HOLDING.AS_OF_DATE",
+      "kind": "Column",
+      "name": "as_of_date"
+    },
+    {
+      "id": "csv:transaction",
+      "kind": "SourceFile",
+      "path": "landing/transaction/"
+    },
+    {
+      "id": "table:BRONZE.TRANSACTION",
+      "kind": "IcebergTable",
+      "layer": "bronze"
+    },
+    {
+      "id": "table:SILVER.TRANSACTION",
+      "kind": "IcebergTable",
+      "layer": "silver"
+    },
+    {
+      "id": "column:SILVER.TRANSACTION.TRANSACTION_ID",
+      "kind": "Column",
+      "name": "transaction_id"
+    },
+    {
+      "id": "column:SILVER.TRANSACTION.ACCOUNT_ID",
+      "kind": "Column",
+      "name": "account_id"
+    },
+    {
+      "id": "column:SILVER.TRANSACTION.TRANSACTION_DATE",
+      "kind": "Column",
+      "name": "transaction_date"
+    },
+    {
+      "id": "column:SILVER.TRANSACTION.TRANSACTION_TYPE",
+      "kind": "Column",
+      "name": "transaction_type"
+    },
+    {
+      "id": "column:SILVER.TRANSACTION.AMOUNT",
+      "kind": "Column",
+      "name": "amount"
+    },
+    {
+      "id": "code:sql/00_setup.sql",
+      "kind": "SQLAsset",
+      "path": "sql/00_setup.sql"
+    },
+    {
+      "id": "code:sql/01_tables.sql",
+      "kind": "SQLAsset",
+      "path": "sql/01_tables.sql"
+    },
+    {
+      "id": "code:sql/02_bronze_load.sql",
+      "kind": "SQLAsset",
+      "path": "sql/02_bronze_load.sql"
+    },
+    {
+      "id": "code:sql/03_silver.sql",
+      "kind": "SQLAsset",
+      "path": "sql/03_silver.sql"
+    },
+    {
+      "id": "code:sql/04_curated.sql",
+      "kind": "SQLAsset",
+      "path": "sql/04_curated.sql"
+    },
+    {
+      "id": "table:CURATED.FACT_POLICY_PREMIUM",
+      "kind": "IcebergTable",
+      "layer": "curated"
+    },
+    {
+      "id": "table:CURATED.FACT_WEALTH_POSITION",
+      "kind": "IcebergTable",
+      "layer": "curated"
+    },
+    {
+      "id": "table:CURATED.MONTHLY_PREMIUM_BY_PRODUCT",
+      "kind": "IcebergTable",
+      "layer": "curated"
+    },
+    {
+      "id": "code:sql/05_quality.sql",
+      "kind": "SQLAsset",
+      "path": "sql/05_quality.sql"
+    }
+  ],
+  "edges": [
+    {
+      "source": "csv:customer",
+      "target": "table:BRONZE.CUSTOMER",
+      "relation": "FEEDS"
+    },
+    {
+      "source": "table:BRONZE.CUSTOMER",
+      "target": "table:SILVER.CUSTOMER",
+      "relation": "TRANSFORMS_INTO"
+    },
+    {
+      "source": "table:SILVER.CUSTOMER",
+      "target": "column:SILVER.CUSTOMER.CUSTOMER_ID",
+      "relation": "HAS_COLUMN"
+    },
+    {
+      "source": "table:SILVER.CUSTOMER",
+      "target": "column:SILVER.CUSTOMER.FIRST_NAME",
+      "relation": "HAS_COLUMN"
+    },
+    {
+      "source": "table:SILVER.CUSTOMER",
+      "target": "column:SILVER.CUSTOMER.LAST_NAME",
+      "relation": "HAS_COLUMN"
+    },
+    {
+      "source": "table:SILVER.CUSTOMER",
+      "target": "column:SILVER.CUSTOMER.STATE",
+      "relation": "HAS_COLUMN"
+    },
+    {
+      "source": "table:SILVER.CUSTOMER",
+      "target": "column:SILVER.CUSTOMER.BIRTH_DATE",
+      "relation": "HAS_COLUMN"
+    },
+    {
+      "source": "csv:insurance_product",
+      "target": "table:BRONZE.INSURANCE_PRODUCT",
+      "relation": "FEEDS"
+    },
+    {
+      "source": "table:BRONZE.INSURANCE_PRODUCT",
+      "target": "table:SILVER.INSURANCE_PRODUCT",
+      "relation": "TRANSFORMS_INTO"
+    },
+    {
+      "source": "table:SILVER.INSURANCE_PRODUCT",
+      "target": "column:SILVER.INSURANCE_PRODUCT.PRODUCT_ID",
+      "relation": "HAS_COLUMN"
+    },
+    {
+      "source": "table:SILVER.INSURANCE_PRODUCT",
+      "target": "column:SILVER.INSURANCE_PRODUCT.PRODUCT_NAME",
+      "relation": "HAS_COLUMN"
+    },
+    {
+      "source": "table:SILVER.INSURANCE_PRODUCT",
+      "target": "column:SILVER.INSURANCE_PRODUCT.LINE_OF_BUSINESS",
+      "relation": "HAS_COLUMN"
+    },
+    {
+      "source": "csv:policy",
+      "target": "table:BRONZE.POLICY",
+      "relation": "FEEDS"
+    },
+    {
+      "source": "table:BRONZE.POLICY",
+      "target": "table:SILVER.POLICY",
+      "relation": "TRANSFORMS_INTO"
+    },
+    {
+      "source": "table:SILVER.POLICY",
+      "target": "column:SILVER.POLICY.POLICY_ID",
+      "relation": "HAS_COLUMN"
+    },
+    {
+      "source": "table:SILVER.POLICY",
+      "target": "column:SILVER.POLICY.CUSTOMER_ID",
+      "relation": "HAS_COLUMN"
+    },
+    {
+      "source": "table:SILVER.POLICY",
+      "target": "column:SILVER.POLICY.PRODUCT_ID",
+      "relation": "HAS_COLUMN"
+    },
+    {
+      "source": "table:SILVER.POLICY",
+      "target": "column:SILVER.POLICY.POLICY_STATUS",
+      "relation": "HAS_COLUMN"
+    },
+    {
+      "source": "table:SILVER.POLICY",
+      "target": "column:SILVER.POLICY.EFFECTIVE_DATE",
+      "relation": "HAS_COLUMN"
+    },
+    {
+      "source": "table:SILVER.POLICY",
+      "target": "column:SILVER.POLICY.ANNUAL_PREMIUM",
+      "relation": "HAS_COLUMN"
+    },
+    {
+      "source": "table:SILVER.POLICY",
+      "target": "column:SILVER.POLICY.UPDATED_AT",
+      "relation": "HAS_COLUMN"
+    },
+    {
+      "source": "csv:coverage",
+      "target": "table:BRONZE.COVERAGE",
+      "relation": "FEEDS"
+    },
+    {
+      "source": "table:BRONZE.COVERAGE",
+      "target": "table:SILVER.COVERAGE",
+      "relation": "TRANSFORMS_INTO"
+    },
+    {
+      "source": "table:SILVER.COVERAGE",
+      "target": "column:SILVER.COVERAGE.COVERAGE_ID",
+      "relation": "HAS_COLUMN"
+    },
+    {
+      "source": "table:SILVER.COVERAGE",
+      "target": "column:SILVER.COVERAGE.POLICY_ID",
+      "relation": "HAS_COLUMN"
+    },
+    {
+      "source": "table:SILVER.COVERAGE",
+      "target": "column:SILVER.COVERAGE.COVERAGE_TYPE",
+      "relation": "HAS_COLUMN"
+    },
+    {
+      "source": "table:SILVER.COVERAGE",
+      "target": "column:SILVER.COVERAGE.FACE_AMOUNT",
+      "relation": "HAS_COLUMN"
+    },
+    {
+      "source": "csv:advisor",
+      "target": "table:BRONZE.ADVISOR",
+      "relation": "FEEDS"
+    },
+    {
+      "source": "table:BRONZE.ADVISOR",
+      "target": "table:SILVER.ADVISOR",
+      "relation": "TRANSFORMS_INTO"
+    },
+    {
+      "source": "table:SILVER.ADVISOR",
+      "target": "column:SILVER.ADVISOR.ADVISOR_ID",
+      "relation": "HAS_COLUMN"
+    },
+    {
+      "source": "table:SILVER.ADVISOR",
+      "target": "column:SILVER.ADVISOR.ADVISOR_NAME",
+      "relation": "HAS_COLUMN"
+    },
+    {
+      "source": "table:SILVER.ADVISOR",
+      "target": "column:SILVER.ADVISOR.REGION",
+      "relation": "HAS_COLUMN"
+    },
+    {
+      "source": "csv:wealth_account",
+      "target": "table:BRONZE.WEALTH_ACCOUNT",
+      "relation": "FEEDS"
+    },
+    {
+      "source": "table:BRONZE.WEALTH_ACCOUNT",
+      "target": "table:SILVER.WEALTH_ACCOUNT",
+      "relation": "TRANSFORMS_INTO"
+    },
+    {
+      "source": "table:SILVER.WEALTH_ACCOUNT",
+      "target": "column:SILVER.WEALTH_ACCOUNT.ACCOUNT_ID",
+      "relation": "HAS_COLUMN"
+    },
+    {
+      "source": "table:SILVER.WEALTH_ACCOUNT",
+      "target": "column:SILVER.WEALTH_ACCOUNT.CUSTOMER_ID",
+      "relation": "HAS_COLUMN"
+    },
+    {
+      "source": "table:SILVER.WEALTH_ACCOUNT",
+      "target": "column:SILVER.WEALTH_ACCOUNT.ADVISOR_ID",
+      "relation": "HAS_COLUMN"
+    },
+    {
+      "source": "table:SILVER.WEALTH_ACCOUNT",
+      "target": "column:SILVER.WEALTH_ACCOUNT.ACCOUNT_TYPE",
+      "relation": "HAS_COLUMN"
+    },
+    {
+      "source": "table:SILVER.WEALTH_ACCOUNT",
+      "target": "column:SILVER.WEALTH_ACCOUNT.OPENED_DATE",
+      "relation": "HAS_COLUMN"
+    },
+    {
+      "source": "table:SILVER.WEALTH_ACCOUNT",
+      "target": "column:SILVER.WEALTH_ACCOUNT.ACCOUNT_STATUS",
+      "relation": "HAS_COLUMN"
+    },
+    {
+      "source": "csv:holding",
+      "target": "table:BRONZE.HOLDING",
+      "relation": "FEEDS"
+    },
+    {
+      "source": "table:BRONZE.HOLDING",
+      "target": "table:SILVER.HOLDING",
+      "relation": "TRANSFORMS_INTO"
+    },
+    {
+      "source": "table:SILVER.HOLDING",
+      "target": "column:SILVER.HOLDING.HOLDING_ID",
+      "relation": "HAS_COLUMN"
+    },
+    {
+      "source": "table:SILVER.HOLDING",
+      "target": "column:SILVER.HOLDING.ACCOUNT_ID",
+      "relation": "HAS_COLUMN"
+    },
+    {
+      "source": "table:SILVER.HOLDING",
+      "target": "column:SILVER.HOLDING.SECURITY_SYMBOL",
+      "relation": "HAS_COLUMN"
+    },
+    {
+      "source": "table:SILVER.HOLDING",
+      "target": "column:SILVER.HOLDING.QUANTITY",
+      "relation": "HAS_COLUMN"
+    },
+    {
+      "source": "table:SILVER.HOLDING",
+      "target": "column:SILVER.HOLDING.MARKET_PRICE",
+      "relation": "HAS_COLUMN"
+    },
+    {
+      "source": "table:SILVER.HOLDING",
+      "target": "column:SILVER.HOLDING.AS_OF_DATE",
+      "relation": "HAS_COLUMN"
+    },
+    {
+      "source": "csv:transaction",
+      "target": "table:BRONZE.TRANSACTION",
+      "relation": "FEEDS"
+    },
+    {
+      "source": "table:BRONZE.TRANSACTION",
+      "target": "table:SILVER.TRANSACTION",
+      "relation": "TRANSFORMS_INTO"
+    },
+    {
+      "source": "table:SILVER.TRANSACTION",
+      "target": "column:SILVER.TRANSACTION.TRANSACTION_ID",
+      "relation": "HAS_COLUMN"
+    },
+    {
+      "source": "table:SILVER.TRANSACTION",
+      "target": "column:SILVER.TRANSACTION.ACCOUNT_ID",
+      "relation": "HAS_COLUMN"
+    },
+    {
+      "source": "table:SILVER.TRANSACTION",
+      "target": "column:SILVER.TRANSACTION.TRANSACTION_DATE",
+      "relation": "HAS_COLUMN"
+    },
+    {
+      "source": "table:SILVER.TRANSACTION",
+      "target": "column:SILVER.TRANSACTION.TRANSACTION_TYPE",
+      "relation": "HAS_COLUMN"
+    },
+    {
+      "source": "table:SILVER.TRANSACTION",
+      "target": "column:SILVER.TRANSACTION.AMOUNT",
+      "relation": "HAS_COLUMN"
+    },
+    {
+      "source": "code:sql/03_silver.sql",
+      "target": "table:BRONZE.CUSTOMER",
+      "relation": "READS_FROM"
+    },
+    {
+      "source": "code:sql/03_silver.sql",
+      "target": "table:BRONZE.INSURANCE_PRODUCT",
+      "relation": "READS_FROM"
+    },
+    {
+      "source": "code:sql/03_silver.sql",
+      "target": "table:BRONZE.POLICY",
+      "relation": "READS_FROM"
+    },
+    {
+      "source": "code:sql/03_silver.sql",
+      "target": "table:BRONZE.COVERAGE",
+      "relation": "READS_FROM"
+    },
+    {
+      "source": "code:sql/03_silver.sql",
+      "target": "table:BRONZE.ADVISOR",
+      "relation": "READS_FROM"
+    },
+    {
+      "source": "code:sql/03_silver.sql",
+      "target": "table:BRONZE.WEALTH_ACCOUNT",
+      "relation": "READS_FROM"
+    },
+    {
+      "source": "code:sql/03_silver.sql",
+      "target": "table:BRONZE.HOLDING",
+      "relation": "READS_FROM"
+    },
+    {
+      "source": "code:sql/03_silver.sql",
+      "target": "table:BRONZE.TRANSACTION",
+      "relation": "READS_FROM"
+    },
+    {
+      "source": "code:sql/03_silver.sql",
+      "target": "table:SILVER.CUSTOMER",
+      "relation": "WRITES_TO"
+    },
+    {
+      "source": "code:sql/03_silver.sql",
+      "target": "table:SILVER.INSURANCE_PRODUCT",
+      "relation": "WRITES_TO"
+    },
+    {
+      "source": "code:sql/03_silver.sql",
+      "target": "table:SILVER.POLICY",
+      "relation": "WRITES_TO"
+    },
+    {
+      "source": "code:sql/03_silver.sql",
+      "target": "table:SILVER.COVERAGE",
+      "relation": "WRITES_TO"
+    },
+    {
+      "source": "code:sql/03_silver.sql",
+      "target": "table:SILVER.ADVISOR",
+      "relation": "WRITES_TO"
+    },
+    {
+      "source": "code:sql/03_silver.sql",
+      "target": "table:SILVER.WEALTH_ACCOUNT",
+      "relation": "WRITES_TO"
+    },
+    {
+      "source": "code:sql/03_silver.sql",
+      "target": "table:SILVER.HOLDING",
+      "relation": "WRITES_TO"
+    },
+    {
+      "source": "code:sql/03_silver.sql",
+      "target": "table:SILVER.TRANSACTION",
+      "relation": "WRITES_TO"
+    },
+    {
+      "source": "code:sql/04_curated.sql",
+      "target": "table:SILVER.POLICY",
+      "relation": "READS_FROM"
+    },
+    {
+      "source": "code:sql/04_curated.sql",
+      "target": "table:SILVER.INSURANCE_PRODUCT",
+      "relation": "READS_FROM"
+    },
+    {
+      "source": "code:sql/04_curated.sql",
+      "target": "table:SILVER.WEALTH_ACCOUNT",
+      "relation": "READS_FROM"
+    },
+    {
+      "source": "code:sql/04_curated.sql",
+      "target": "table:SILVER.HOLDING",
+      "relation": "READS_FROM"
+    },
+    {
+      "source": "code:sql/04_curated.sql",
+      "target": "table:CURATED.FACT_POLICY_PREMIUM",
+      "relation": "READS_FROM"
+    },
+    {
+      "source": "code:sql/04_curated.sql",
+      "target": "table:CURATED.FACT_POLICY_PREMIUM",
+      "relation": "WRITES_TO"
+    },
+    {
+      "source": "code:sql/04_curated.sql",
+      "target": "table:CURATED.FACT_WEALTH_POSITION",
+      "relation": "WRITES_TO"
+    },
+    {
+      "source": "code:sql/04_curated.sql",
+      "target": "table:CURATED.MONTHLY_PREMIUM_BY_PRODUCT",
+      "relation": "WRITES_TO"
+    },
+    {
+      "source": "code:sql/05_quality.sql",
+      "target": "table:SILVER.POLICY",
+      "relation": "READS_FROM"
+    },
+    {
+      "source": "code:sql/05_quality.sql",
+      "target": "table:SILVER.CUSTOMER",
+      "relation": "READS_FROM"
+    },
+    {
+      "source": "code:sql/05_quality.sql",
+      "target": "table:CURATED.FACT_POLICY_PREMIUM",
+      "relation": "READS_FROM"
+    },
+    {
+      "source": "code:sql/05_quality.sql",
+      "target": "table:CURATED.FACT_WEALTH_POSITION",
+      "relation": "READS_FROM"
+    }
+  ]
+}

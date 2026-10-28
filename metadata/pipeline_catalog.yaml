@@ -1,0 +1,34 @@
+version: 1
+project: mm-reference-lakehouse
+fictional_reference: true
+source_systems:
+  - id: onprem_pas
+    domain: insurance
+    format: CSV
+    datasets: [customer, insurance_product, policy, coverage]
+  - id: onprem_wealth
+    domain: wealth
+    format: CSV
+    datasets: [advisor, wealth_account, holding, transaction]
+flows:
+  - id: csv_to_bronze
+    reads: [azure_blob_landing]
+    writes: [BRONZE]
+    implementation: sql/02_bronze_load.sql
+    owner_persona: DataEngineer
+  - id: bronze_to_silver
+    reads: [BRONZE]
+    writes: [SILVER]
+    implementation: sql/03_silver.sql
+    owner_agent: TransformationAgent
+  - id: silver_to_curated
+    reads: [SILVER]
+    writes: [CURATED]
+    implementation: sql/04_curated.sql
+    owner_agent: TransformationAgent
+  - id: schema_drift
+    implementation: src/mm_lakehouse/drift.py
+    owner_agent: SchemaDriftAgent
+artifacts:
+  graph: artifacts/knowledge_graph.json
+  contracts: src/mm_lakehouse/contracts.py
